@@ -7,6 +7,11 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
+.right-footer {
+  display: flex;
+  flex-basis: 400px;
+  justify-content: space-between;
+}
 .footer-links {
   display: flex;
   align-items: center;
@@ -21,6 +26,14 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
+.footer .fa-copyright {
+  color: rgba(0,0,0,0.3);
+}
+.footer-legal a{
+  color: rgba(0,0,0,0.3);
+}
+.footer-legal a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  color: black;
 }
