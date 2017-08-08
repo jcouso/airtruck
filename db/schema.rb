@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170807205859) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.string   "departure_date"
+    t.datetime "departure_date"
     t.datetime "arrival_date"
     t.datetime "departure_address"
     t.string   "arrival_address"

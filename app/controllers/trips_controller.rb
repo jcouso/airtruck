@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+  layout "landing-page", only: [ :index ]
   def index
     if params[:origin_id].present? || params[:destination_id].present?
         if params[:origin_id].blank?
