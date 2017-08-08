@@ -13,7 +13,10 @@
     <!--<p class="alert"><%= alert %></p>-->
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/banner' %>
+    <div class="container">
     <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
   </body>

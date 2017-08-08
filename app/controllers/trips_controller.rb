@@ -1,7 +1,11 @@
 class TripsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    @trips = Trip.all
+    if params[:origin_id].present? || params[:destination_id].present?
+      @trips = Trip.where(city_origin_id: params[:origin_id], city_destination_id: params[:destination_id])
+    else
+      @trips = Trip.order("created_at DESC").limit(3)
+    end
   end
 
   def show
