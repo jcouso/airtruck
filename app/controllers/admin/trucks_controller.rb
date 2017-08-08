@@ -1,4 +1,4 @@
-class TrucksController < ApplicationController
+class Admin::TrucksController < ApplicationController
 before_action :set_truck, only: [:show, :edit, :update, :destroy]
   def index
     @trucks = current_user.trucks
