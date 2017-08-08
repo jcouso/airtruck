@@ -1,0 +1,11 @@
+<%= simple_form_for([:admin, @truck]) do |f| %>
+
+  <div class="form-input">
+    <%= f.input :name %>
+    <%= f.input :vacancies %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary"%>
+  </div>
+
+  <% end %>
