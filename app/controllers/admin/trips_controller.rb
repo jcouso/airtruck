@@ -21,8 +21,8 @@ class Admin::TripsController < ApplicationController
     @truck = Truck.find(params[:truck_id])
     @trip = current_user.trips.new(trip_params)
     @trip.truck = @truck
-    if @trip.save
-      redirect_to admin_trip_path(@trip)
+    if @trip.truck.save
+      redirect_to list_admin_truck_trips_path(@truck)
     else
       render :new
     end
@@ -52,6 +52,6 @@ class Admin::TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:departure_date, :arrival_date, :departure_address, :arrival_address, :vacancies, :price)
+    params.require(:trip).permit(:departure_date, :departure_address, :arrival_date, :arrival_address, :vacancies, :price)
   end
 end
