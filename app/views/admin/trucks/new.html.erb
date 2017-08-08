@@ -1,2 +1,5 @@
-<h1>Trucks#new</h1>
-<p>Find me in app/views/trucks/new.html.erb</p>
+<h1>Cadastrar Novo Caminhão</h1>
+
+<%= render 'form', truck: @truck %>
+<br>
+<%= link_to 'Voltar', admin_trucks_path, class: "btn btn-primary" %>

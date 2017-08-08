@@ -1,2 +1,8 @@
-<h1>Trucks#index</h1>
-<p>Find me in app/views/trucks/index.html.erb</p>
+
+<h1>Caminhões Cadastrados</h1>
+
+<%= link_to "Cadastre um novo caminhão", new_admin_truck_path, class: "btn btn-primary" %>
+<% @trucks.each do |truck| %>
+  <p><%= truck.name  %></p>
+  <p><%= truck.vacancies %>
+<% end %>
