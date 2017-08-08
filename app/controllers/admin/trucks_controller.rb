@@ -33,7 +33,7 @@ before_action :set_truck, only: [:show, :edit, :update, :destroy]
 
   def destroy
     @truck.delete
-    redirect_to truck_path
+    redirect_to admin_trucks_path
   end
 
   private
