@@ -27,9 +27,12 @@ class TripsController < ApplicationController
 
   end
 
+  # def search
+  # end
+
   private
 
   def trip_params
-    params.require(:trip).permit(:city_origin_id, :city_destination_id)
+    params.require(:trip).permit(:departure_date, :arrival_date, :departure_address, :arrival_address, :vacancies, :price)
   end
 end
