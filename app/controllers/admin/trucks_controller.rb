@@ -1,4 +1,4 @@
-class TrucksController < ApplicationController
+class Admin::TrucksController < ApplicationController
 before_action :set_truck, only: [:show, :edit, :update, :destroy]
   def index
     @trucks = current_user.trucks
@@ -21,10 +21,19 @@ before_action :set_truck, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+  end
 
+  def update
+      if @truck.update(truck_params)
+      redirect_to truck_path(@truck)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @truck.delete
+    redirect_to truck_path
   end
 
   private
