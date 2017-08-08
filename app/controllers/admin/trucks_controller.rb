@@ -14,7 +14,7 @@ before_action :set_truck, only: [:show, :edit, :update, :destroy]
   def create
     @truck = current_user.trucks.new(truck_params)
     if @truck.save
-      redirect_to trucks_path(@truck)
+      redirect_to admin_trucks_path(@truck)
     else
       render :new
     end
