@@ -7,5 +7,5 @@ Rails.application.routes.draw do
       resources :trips, except: [:index, :show]
     end
   end
-  resources :trips, only: [:show]
+  resources :trips, only: [:index, :show]
 end
