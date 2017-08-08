@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     end
     resources :trips, only: [:update, :edit, :destroy, :show, :index]
   end
-  resources :trips, only: [:show]
+  resources :trips, only: [:index, :show]
 end
