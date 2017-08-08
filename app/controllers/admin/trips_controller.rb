@@ -1,17 +1,15 @@
 class Admin::TripsController < ApplicationController
-  # before_action :set_trip, only: [:show, :edit, :update, :destroy]
-
   def index
     @trips = current_user.trips
   end
 
   def show
+    @trip = current_user.trips.find(params[:id])
   end
 
   def list
     @truck = Truck.find(params[:truck_id])
-    @trips = current_user.trips
-    @trips.truck = @truck
+    @trips = @truck.trips
   end
 
   def new
@@ -31,15 +29,14 @@ class Admin::TripsController < ApplicationController
   end
 
   def edit
-    @truck = Truck.find(params[:truck_id])
-    @trip.truck = @truck
+    @trip  = Trip.find(params[:id])
+    @truck = @trip.truck
   end
 
   def update
-    @truck = Truck.find(params[:truck_id])
-    @trip = current_user.trips.update(trip_params)
-    @trip.truck = @truck
-    if
+    @trip = Trip.find(params[:id])
+    @truck = @trip.truck
+    if @trip.update(trip_params)
       redirect_to admin_trip_path(@trip)
     else
       render :edit
@@ -53,10 +50,6 @@ class Admin::TripsController < ApplicationController
   end
 
   private
-
-  # def set_trip
-  #   @trip = current_user.trips.find(params[:id])
-  # end
 
   def trip_params
     params.require(:trip).permit(:departure_date, :arrival_date, :departure_address, :arrival_address, :vacancies, :price)
