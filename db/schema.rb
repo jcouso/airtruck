@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20170807205859) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.string   "departure_address"
     t.datetime "departure_date"
-    t.string   "arrival_address"
     t.datetime "arrival_date"
+    t.string   "departure_address"
+    t.string   "arrival_address"
     t.integer  "vacancies"
     t.integer  "price"
     t.integer  "truck_id"
