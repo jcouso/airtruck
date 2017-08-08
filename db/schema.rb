@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170807205859) do
   create_table "trips", force: :cascade do |t|
     t.datetime "departure_date"
     t.datetime "arrival_date"
-    t.datetime "departure_address"
+    t.string   "departure_address"
     t.string   "arrival_address"
     t.integer  "vacancies"
     t.integer  "price"
