@@ -38,10 +38,10 @@ class Admin::TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.city_origin_id = params[:trip][:departure_address]
-    @trip.city_destinatino_id = params[:trip][:arrival_address]
+    @trip.city_destination_id = params[:trip][:arrival_address]
     @truck = @trip.truck
     if @trip.update(trip_params)
-      redirect_to admin_trip_path(@trip)
+      redirect_to list_admin_truck_trips_path(@truck)
     else
       render :edit
     end

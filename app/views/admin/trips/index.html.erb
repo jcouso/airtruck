@@ -1,15 +1,21 @@
-<p>admin/trips</p>
-<h1>Viagens Cadastradas</h1>
+<h1>Minhas viagens</h1>
 <br>
 <div class="row">
   <% @trips.each do |trip| %>
     <div class="col-xs-12 col-md-6">
-      <div class="truck-card">
-        <p>Nome da Cegonha: <%= trip.truck  %></p>
-        <p>Vagas Totais: <%= truck.vacancies %>
-        <div >
-          <%= link_to "Viagens Casdastras", list_admin_truck_trips_path(truck), class: "btn btn-primary"  %>
-          <%= link_to "Deletar Cegonha", admin_truck_path(truck), method: 'delete', class: "btn btn-danger" %>
+      <div class="trip-card">
+        <h3><%= link_to trip.truck.name, admin_trip_path(trip) %></h3>
+        <p>Origem: <%= trip.city_origin.name %></p>
+        <p>Horário de saída: <%= trip.departure_date %></p>
+        <p>Destino: <%= trip.city_destination.name %></p>
+        <p>Horário de chegada: <%= trip.arrival_date %></p>
+        <p>Vagas Restantes: <%= trip.vacancies %></p>
+        <p>Preço: <%= trip.price %></p>
+        <div>
+          <%= link_to "Editar", edit_admin_trip_path(trip), class: "btn btn-primary"  %>
+          <%= link_to "Deletar", admin_trip_path(trip), method: 'delete', class: "btn btn-danger" %>
+          <br>
+          <br>
         </div>
       </div>
     </div>

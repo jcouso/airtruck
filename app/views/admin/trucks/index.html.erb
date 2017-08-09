@@ -7,11 +7,11 @@
   <% @trucks.each do |truck| %>
     <div class="col-xs-12 col-md-6">
       <div class="truck-card">
-        <p>Nome da Cegonha: <%= truck.name  %></p>
-        <p>Vagas Totais: <%= truck.vacancies %>
+        <h3><%= truck.name  %></h3>
+        <p>Tamanho: <%= truck.vacancies %> veículos</p>
         <div >
-          <%= link_to "Viagens Cadastradas", list_admin_truck_trips_path(truck), class: "btn btn-primary"  %>
-          <%= link_to "Deletar Cegonha", admin_truck_path(truck), method: 'delete', class: "btn btn-danger" %>
+          <%= link_to "Viagens", list_admin_truck_trips_path(truck), class: "btn btn-primary"  %>
+          <%= link_to "Deletar Caminhão", admin_truck_path(truck), method: 'delete', class: "btn btn-danger" %>
         </div>
       </div>
     </div>
