@@ -1,2 +1,46 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trucks/show.html.erb</p>
+<div class="container">
+<br>
+<br>
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= cl_image_path('Captura_de_tela_2017-08-09_13.25.01_lsvxd4.jpg')%>); width: 100%; height: 150px;">
+    <div class="banner-content">
+      <h1><%= @trip.city_origin.name.upcase %> - <%= @trip.city_destination.name.upcase %></h1>
+      <p><%= @trip.departure_date.strftime('%d/%b/%y') %></p>
+    </div>
+  </div>
+
+
+  <center><h2>Sua cegonha <%= @trip.truck.name %> transportará até <%= @trip.truck.vacancies %> carros e ainda tem <%= @trip.vacancies %> vagas disponíveis</h2></center>
+
+<br>
+<br>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3 align="center">Seu cliente entregará o veículo em</h3>
+      <p align="center"><%= @trip.city_origin.name %>(<%= @trip.city_origin.state %>)</p>
+      <p align="center"><%= @trip.departure_date.strftime('%d/%b/%y') %>  às <%= @trip.departure_date.strftime('%H:%M') %></p>
+      <h3 align="center">Você entregará o veículo em</h3>
+      <p align="center"><%= @trip.city_destination.name %>(<%= @trip.city_destination.state %>)</p>
+      <p align="center"><%= @trip.arrival_date.strftime('%d/%b/%y') %> às <%= @trip.arrival_date.strftime('%H:%M') %></p>
+    </div>
+    <div class="col-md-6">
+      <div class="row" align="center">
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="row" align="center">
+        <%= link_to "Editar a Viagem", edit_admin_trip_path(@trip), class: "btn btn-success btn-lg" %>
+        <p>Valor unitário: R$<%= @trip.price %>,00</p>
+        <br>
+        <%= link_to "Voltar", :back, class: "btn btn-danger btn-lg" %>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
