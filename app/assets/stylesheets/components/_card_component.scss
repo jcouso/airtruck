@@ -5,6 +5,8 @@
   background-position: center;
   color: white;
   position: relative;
+  box-shadow: 2px 2px 10px #a3a3a3;
+  margin: 12px 0;
 }
 .card-user {
   position: absolute;
@@ -42,7 +44,9 @@
   z-index: 2;
   background: black;
   opacity: 0;
+
+  &:hover {
+    opacity: 0.1;
 }
-.card-link:hover {
-  opacity: 0.1;
+
 }
