@@ -5,10 +5,7 @@
 <%= link_to 'Adicionar viagem', new_admin_truck_trip_path(@truck), class: "btn btn-success" %>
 <br>
 <% @trips.each do |trip| %>
-  <ul>
-    <%= trip %>
-    <!-- <%#= render 'shared/card_component', trip: trip %> -->
-  </ul>
+    <%= trip.price %>
 <% end %>
 <br>
 <%= link_to 'Voltar', admin_trucks_path, class: "btn btn-danger" %>
