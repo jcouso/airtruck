@@ -21,7 +21,8 @@ class Admin::TripsController < ApplicationController
     @truck = Truck.find(params[:truck_id])
     @trip = current_user.trips.new(trip_params)
     @trip.truck = @truck
-    if @trip.truck.save
+    binding.pry
+    if @trip.truck.save!
       redirect_to list_admin_truck_trips_path(@truck)
     else
       render :new
