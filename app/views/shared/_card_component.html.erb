@@ -2,8 +2,10 @@
   <div class="card-category"><%= trip.city_origin.name%> - <%= trip.city_destination.name %></div>
   <div class="card-description">
     <h2>Apenas R$<%= trip.price %></h2>
-    <p><%= trip.departure_date.strftime('%d/%b/%y') %></p>
+    <p>Data de Saida: <%= trip.departure_date.strftime('%d/%b/%y') %></p>
   </div>
   <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <%= link_to "", trip_path(trip), class: "card-link" %>
+  <%= link_to trip_path(trip), class: "card-link" do %>
+
+  <% end %>
 </div>
