@@ -8,7 +8,7 @@
     <div class="row">
         <%= form_tag(trips_path, method: :get,  class: "form-group form-group-lg") do %>
           <div class="header-input col-sm-11 col-sm-offset-1 col-md-4">
-            <%= select_tag "origin_id", options_from_collection_for_select(City.all.order('name ASC'), City.all.state, "id", "name"), placeholder: "Origem", class: "form-control" %>
+            <%= select_tag "origin_id", options_from_collection_for_select(City.all.order('name ASC'), "id", "name"), placeholder: "Origem", class: "form-control" %>
           </div>
           <div class="header-input col-sm-11 col-sm-offset-1 col-md-4">
           <%= select_tag "destination_id", options_from_collection_for_select(City.all.order('name ASC'), "id", "name"), placeholder: "Destino", class: "form-control" %>
