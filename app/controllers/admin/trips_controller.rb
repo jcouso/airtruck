@@ -20,8 +20,10 @@ class Admin::TripsController < ApplicationController
   def create
     @truck = Truck.find(params[:truck_id])
     @trip = current_user.trips.new(trip_params)
+    @trip.city_origin_id = params[:trip][:departure_address]
+    @trip.city_destination_id = params[:trip][:arrival_address]
     @trip.truck = @truck
-    if @trip.save
+    if @trip.save!
       redirect_to list_admin_truck_trips_path(@truck)
     else
       render :new
@@ -35,6 +37,8 @@ class Admin::TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
+    @trip.city_origin_id = params[:trip][:departure_address]
+    @trip.city_destinatino_id = params[:trip][:arrival_address]
     @truck = @trip.truck
     if @trip.update(trip_params)
       redirect_to admin_trip_path(@trip)
