@@ -10,7 +10,7 @@
         <p>Nome da Cegonha: <%= truck.name  %></p>
         <p>Vagas Totais: <%= truck.vacancies %>
         <div >
-          <%= link_to "Viagens Casdastras", list_admin_truck_trips_path(truck), class: "btn btn-primary"  %>
+          <%= link_to "Viagens Cadastradas", list_admin_truck_trips_path(truck), class: "btn btn-primary"  %>
           <%= link_to "Deletar Cegonha", admin_truck_path(truck), method: 'delete', class: "btn btn-danger" %>
         </div>
       </div>
