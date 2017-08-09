@@ -1,5 +1,23 @@
 .truck-card {
   background-color: white;
-  font-size: 25px;
-  margin:10px
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-size: 16px;
+  margin: 10 0px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.truck-card-links {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  a {
+    margin: 0 10px;
+  }
+}
+.card-truck-avatar {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 80px;
 }

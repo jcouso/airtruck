@@ -1,17 +1,24 @@
-<h1>Caminhões Cadastrados</h1>
-<br>
-<%= link_to "Cadastre um novo caminhão", new_admin_truck_path, class: "btn btn-primary" %>
+<div class="row">
+   <div class="col-xs-12">
+      <h1>Caminhões Cadastrados</h1>
+      <br>
+      <%= link_to "Cadastre um novo caminhão", new_admin_truck_path, class: "btn btn-success" %>
+   </div>
+</div>
 <br>
 <br>
 <div class="row">
   <% @trucks.each do |truck| %>
     <div class="col-xs-12 col-md-6">
       <div class="truck-card">
-        <p>Nome da Cegonha: <%= truck.name  %></p>
-        <p>Vagas Totais: <%= truck.vacancies %>
-        <div >
-          <%= link_to "Viagens Casdastras", list_admin_truck_trips_path(truck), class: "btn btn-primary"  %>
-          <%= link_to "Deletar Cegonha", admin_truck_path(truck), method: 'delete', class: "btn btn-danger" %>
+        <p><strong><%= truck.name  %></strong></p>
+        <p><strong>Vagas Totais:</strong> <%= truck.vacancies %>
+        <%= image_tag "truck-card.jpeg", class: "card-truck-avatar" %>
+        <br>
+        <br>
+        <div class="truck-card-links", class="list-inline">
+        <%= link_to "Viagens Casdastradas", list_admin_truck_trips_path(truck), class: "btn btn-primary"  %>
+        <%= link_to "Deletar Cegonha", admin_truck_path(truck), method: 'delete', class: "btn btn-danger" %>
         </div>
       </div>
     </div>
