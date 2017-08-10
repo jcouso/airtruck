@@ -1,13 +1,13 @@
 <div style="margin: 40px 0;">
-<h2>Últimas viagens</h2>
-<br>
-<div class="row">
-  <% @trips.each do |trip| %>
-    <div class="col-xs-12 col-md-4">
-      <%= render 'shared/card_component', trip: trip %>
-    </div>
-  <% end %>
-</div>
+  <h2>Últimas viagens</h2>
+  <br>
+  <div class="row">
+    <% @trips.each do |trip| %>
+      <div class="col-xs-12 col-md-4">
+        <%= render 'shared/card_component', trip: trip %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

@@ -1,6 +1,8 @@
-<!-- <form action="/search" method="post">
-  <%#= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" name="name">
-  <input type="text" name="address">
-  <input type="submit">
-</form> -->
+<h1>Viagens de :</h1>
+<div class="row">
+    <% @trips.each do |trip| %>
+      <div class="col-xs-12 col-md-4">
+        <%= render 'shared/card_component', trip: trip %>
+      </div>
+    <% end %>
+  </div>
