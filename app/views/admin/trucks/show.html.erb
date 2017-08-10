@@ -1,13 +1,17 @@
-<h1><%= @truck.name %> <%= link_to 'Deletar', admin_truck_path(@truck), method: 'delete', data: { confirm: "Você tem certeza que deseja excluir este veículo?" }, class: "btn btn-danger" %> <%= link_to 'Editar', edit_admin_truck_path(@truck), class: "btn btn-primary" %></h1>
+<h1><%= @truck.name %> <%= link_to 'Editar', edit_admin_truck_path(@truck), class: "btn btn-primary" %> <%= link_to 'Deletar', admin_truck_path(@truck), method: 'delete', data: { confirm: "Você tem certeza que deseja excluir este veículo?" }, class: "btn btn-danger" %></h1>
 <br>
 <h2>Viagens listadas:</h2>
 <br>
 <%= link_to 'Adicionar viagem', new_admin_truck_trip_path(@truck), class: "btn btn-success" %>
 <br>
-<% @truck.trips.each do |trip| %>
-  <ul>
-    <%= render 'shared/card_component', trip: trip %>
-  </ul>
+<% if @truck.trips.nil? %>
+  <p>Não há viagens cadastradas</p>
+<% else %>
+  <% @truck.trips.each do |trip| %>
+    <ul>
+      <%= render 'shared/card_component', trip: trip %>
+    </ul>
+  <% end %>
 <% end %>
 <br>
 <%= link_to 'Voltar', admin_trucks_path, class: "btn btn-danger" %>

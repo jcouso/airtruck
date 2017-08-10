@@ -1,20 +1,22 @@
 <%# <%= cl_image_tag("v8tmtccui3tn0bncoqn5",
       width: 400, height: 300, crop: :fill) %>
+
+
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= cl_image_path('v8tmtccui3tn0bncoqn5.jpg') %>);">
   <div class="banner-content">
     <h1>AirTruck</h1>
     <p>Vá de avião, seu carro não</p>
     <div class="container">
       <div class="row">
-          <%= form_tag(trips_path, method: :get,  class: "form-group form-group-md") do %>
-            <div class="header-input col-sm-11 col-sm-offset-1 col-md-4 col-md-offset-3">
-              <%= select_tag "origin_id", options_from_collection_for_select(City.city_state, "id", "name"), placeholder: "Origem", class: "form-control" %>
+          <%= form_tag(search_trips_path, method: :get,  class: "form-group form-group-md") do %>
+            <div class="header-input col-sm-12 col-sm-offset-0 col-md-4 col-md-offset-4">
+              <%= select_tag :origin_id, options_from_collection_for_select(City.city_state, :id, :name), placeholder: "Origem", class: "form-control" %>
             </div>
-            <div class="header-input col-sm-11 col-sm-offset-1 col-md-4 col-md-offset-3">
-            <%= select_tag "destination_id", options_from_collection_for_select(City.city_state, "id", "name"), placeholder: "Destino", class: "form-control" %>
+            <div class="header-input col-sm-12 col-sm-offset-0 col-md-4 col-md-offset-4">
+            <%= select_tag :destination_id, options_from_collection_for_select(City.city_state, :id, :name), placeholder: "Destino", class: "form-control" %>
             </div>
-            <div class="header-input col-sm-11 col-sm-offset-1 col-md-4 col-md-offset-3">
-              <button type="submit" class="btn btn-primary btn-md">Procure uma cegonha</button>
+            <div class="header-input col-sm-12 col-sm-offset-0 col-md-4 col-md-offset-4">
+              <%= submit_tag "Buscar viagens", class: "btn btn-success" %>
             </div>
           <% end %>
       </div>

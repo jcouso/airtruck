@@ -5,17 +5,22 @@
 <h1>Viagens de <%= @truck.name %>:</h1>
 <br>
 <div class="row">
-  <% @trips.each do |trip| %>
-    <div class="col-xs-12 col-md-6">
-      <div class="trip-card">
-        <p>Origem: <%= trip.city_origin.name %></p>
-        <p>Horário de saída: <%= trip.departure_date %></p>
-        <p>Destino: <%= trip.city_destination.name %></p>
-        <p>Horário de chegada: <%= trip.arrival_date %></p>
-        <p>Vagas Restantes: <%= trip.vacancies %></p>
-        <p>Preço: <%= trip.price %></p>
-        <%= link_to "Editar", edit_admin_trip_path(trip), class: "btn btn-primary" %>
+  <% if @trips.all.empty? %>
+    <p>Não há viagens cadastradas, cadastre uma viagem nova...</p>
+  <% else %>
+    <% @trips.each do |trip| %>
+      <div class="col-xs-12 col-md-6">
+        <div class="trip-card">
+          <h3>De <%= trip.city_origin.name %> para <%= trip.city_destination.name %></h3>
+          <p>Horário de saída: <%= trip.departure_date %></p>
+          <p>Horário de chegada: <%= trip.arrival_date %></p>
+          <p>Vagas Restantes: <%= trip.vacancies %></p>
+          <p>Preço: R$<%= trip.price %></p>
+          <%= link_to "Detalhes", admin_trip_path(trip), class: "btn btn-primary" %>
+          <!-- <%#= link_to "Editar", edit_admin_trip_path(trip), class: "btn btn-primary" %> -->
+          <!-- <%#= link_to 'Deletar', list_admin_truck_trips_path(@truck), method: 'delete', data: { confirm: "Você tem certeza que deseja excluir este veículo?" }, class: "btn btn-danger" %> -->
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
