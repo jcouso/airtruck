@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     end
     resources :trips, only: [:update, :edit, :destroy, :show, :index]
   end
-  resources :trips, only: [:index, :show]
+  resources :trips, only: [:index, :show] do
+    collection do
+      get 'search', to: "trips#search"
+    end
+  end
 end
