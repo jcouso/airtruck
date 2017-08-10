@@ -17,6 +17,27 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @cities = []
+
+    origin = @trip.city_origin
+    destination = @trip.city_destination
+
+    if origin.latitude.nil? || origin.longitude.nil?
+      origin.geocode
+      origin.save
+    end
+
+    if destination.latitude.nil? || destination.longitude.nil?
+      destination.geocode
+      destination.save
+    end
+
+    @cities << @trip.city_origin
+    @cities << @trip.city_destination
+    @hash = Gmaps4rails.build_markers(@cities) do |city, marker|
+      marker.lat city.latitude
+      marker.lng city.longitude
+    end
   end
 
   def search
