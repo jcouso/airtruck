@@ -25,7 +25,7 @@ before_action :set_truck, only: [:show, :edit, :update, :destroy]
 
   def update
     if @truck.update(truck_params)
-      redirect_to admin_truck_path(@truck)
+      redirect_to admin_trucks_path(@truck)
     else
       render :edit
     end
