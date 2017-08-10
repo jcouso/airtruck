@@ -5,9 +5,8 @@
 <h1>Viagens de <%= @truck.name %>:</h1>
 <br>
 <div class="row">
-  <% if @trips == nil %>
-    <p>Não há viagens cadastradas</p>
-    <%= link_to 'Adicionar viagem', new_admin_truck_trip_path(@truck), class: "btn btn-success" %>
+  <% if @trips.all.empty? %>
+    <p>Não há viagens cadastradas, cadastre uma viagem nova...</p>
   <% else %>
     <% @trips.each do |trip| %>
       <div class="col-xs-12 col-md-6">

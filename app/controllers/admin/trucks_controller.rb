@@ -32,7 +32,7 @@ before_action :set_truck, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
-    @truck.delete
+    @truck.destroy
     redirect_to admin_trucks_path
   end
 

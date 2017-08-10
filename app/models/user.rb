@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
-  has_many :trucks
+  has_many :trucks, dependent: :destroy
   has_many :trips, through: :trucks
   after_create :send_welcome_email
 
