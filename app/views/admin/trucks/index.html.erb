@@ -14,7 +14,7 @@
         <p><strong><%= truck.name  %></strong></p>
         <p>Vagas Totais: <%= truck.vacancies %></p>
         <p>Viagens cadastradas: <%= truck.trips.count %></p>
-        <%= image_tag "truck-card.jpeg", class: "card-truck-avatar" %>
+        <%= image_tag "truck-card.jpg", class: "card-truck-avatar" %>
         <br>
         <div class="truck-card-links", class="list-inline">
         <%= link_to "Visualizar viagens", list_admin_truck_trips_path(truck), class: "btn btn-success"  %>
