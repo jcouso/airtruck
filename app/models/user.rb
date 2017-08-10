@@ -6,6 +6,13 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :trucks
   has_many :trips, through: :trucks
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
