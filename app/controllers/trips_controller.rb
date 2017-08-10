@@ -20,7 +20,6 @@ class TripsController < ApplicationController
   end
 
   def search
-    # @trips = Trip.find(params[:origin_id], params[:destination_id])
     if params[:origin_id].present? || params[:destination_id].present?
         if params[:origin_id].blank?
           @trips = Trip.where(city_destination_id: params[:destination_id])
