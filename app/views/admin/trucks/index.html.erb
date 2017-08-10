@@ -17,9 +17,9 @@
         <%= image_tag "truck-card.jpg", class: "card-truck-avatar" %>
         <br>
         <div class="truck-card-links", class="list-inline">
-        <%= link_to "Visualizar viagens", list_admin_truck_trips_path(truck), class: "btn btn-success"  %>
-        <%= link_to "Editar caminhão", edit_admin_truck_path(truck), class: "btn btn-primary"  %>
-        <%= link_to "Remover caminhão", admin_truck_path(truck), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          <%= link_to "Viagens", list_admin_truck_trips_path(truck), class: "btn btn-success btn-xs"  %>
+          <%= link_to "Editar", edit_admin_truck_path(truck), class: "btn btn-primary btn-xs"  %>
+          <%= link_to "Remover", admin_truck_path(truck), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger btn-xs" %>
         </div>
       </div>
     </div>
