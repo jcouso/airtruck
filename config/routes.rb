@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :trucks do
-      resources :trips, only: [:new, :create, :edit, :update] do
+      resources :trips, only: [:new, :create, :edit, :update, :destroy] do
         collection do
           get 'list'
         end
@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     end
     resources :trips, only: [:update, :edit, :destroy, :show, :index]
   end
-  resources :trips, only: [:index, :show]
+  resources :trips, only: [:index, :show] do
+    collection do
+      get 'search', to: "trips#search"
+    end
+  end
 end
