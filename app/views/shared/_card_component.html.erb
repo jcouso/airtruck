@@ -1,5 +1,5 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category"><%= trip.city_origin.name%> - <%= trip.city_destination.name %></div>
+  <div class="card-category"><%= trip.city_origin.state%> | <%= trip.city_origin.name%> -> <%= trip.city_destination.state %> | <%= trip.city_destination.name %></div>
   <div class="card-description">
     <h2>Apenas R$<%= trip.price %></h2>
     <p>Data de Saida: <%= trip.departure_date.strftime('%d/%b/%y') %></p>
