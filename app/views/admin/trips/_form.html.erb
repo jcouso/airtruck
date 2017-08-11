@@ -1,8 +1,18 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+<% content_for(:after_js) do %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+  <script>
+    $(".autocomplete").select2();
+  </script>
+<% end %>
+
 <%= simple_form_for([:admin, @truck, @trip]) do |f| %>
   <div class="form-input">
-    <%= f.input :departure_address, collection: City.city_state %>
+    <%= f.association :city_origin, input_html: { class: "autocomplete" } %>
     <%= f.input :departure_date %>
-    <%= f.input :arrival_address, collection: City.city_state %>
+    <%= f.association :city_destination, input_html: { class: "autocomplete" } %>
     <%= f.input :arrival_date %>
     <%= f.input :vacancies %>
     <%= f.input :price %>
@@ -11,3 +21,4 @@
     <%= f.button :submit, class: "btn btn-primary"%>
   </div>
 <% end %>
+

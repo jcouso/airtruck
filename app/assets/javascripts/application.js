@@ -4,3 +4,4 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+//= require google_maps_autocomplete
