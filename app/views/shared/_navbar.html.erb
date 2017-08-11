@@ -12,13 +12,13 @@
 
         <%= link_to "Meus Veículos", admin_trucks_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Minhas Viagens", admin_trips_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Meus Pedidos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Meus Pedidos", orders_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <% else %>
 
       <!-- Links when logged in -->
 
-        <%= link_to "Meus Pedidos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Meus Pedidos", orders_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
 
       <!-- Avatar with dropdown menu -->
