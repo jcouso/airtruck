@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :trucks, dependent: :destroy
   has_many :trips, through: :trucks
+  has_many :orders
   after_create :send_welcome_email
 
 
@@ -21,6 +22,7 @@ class User < ApplicationRecord
     user_params[:facebook_picture_url] = auth.info.image
     user_params[:token] = auth.credentials.token
     user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
+    # user_params[:name] = "#{auth.first_name}  #{auth.last_name}"
     user_params = user_params.to_h
 
     user = User.find_by(provider: auth.provider, uid: auth.uid)

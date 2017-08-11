@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= favicon_link_tag(source='favicon.ico', options={})%>
-    <title>TODO</title>
+    <title>AirTruck - Transporte Automóveis para qualquer parte do Brasil</title>
+    <meta name="description" content="AirTruck - Transporte Automóveis para qualquer parte do Brasil">
+    <meta property="og:title" content="AirTruck - Transporte Automóveis para qualquer parte do Brasil">
+    <meta property="og:image" content="url(<%= cl_image_path('v8tmtccui3tn0bncoqn5.jpg') %>">
+    <meta property="og:description" content="AirTruck é um serviço que conecta empresas de transporte de automóveis com clientes que desejam enviar seu carro por uma cegonha para qualquer parte do Brasil">
+    <meta property="og:site_name" content="AirTruck"/>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -19,7 +24,7 @@
       <%= yield %>
     </div>
     <%= render 'shared/value_proposition' %>
-    <div class="text-center" style="padding: 50px 0; height:30vh;">
+    <div class="text-center" style="padding: 50px 0; height:40vh;">
       <h2>Voce é trasportadora?<h2>
         <%= link_to "Cadastre seu Caminhão", new_admin_truck_path, class: "btn btn-primary btn-lg", style: "box-shadow: 1px 1px 3px rgba(0,0,0,0.1);" %>
     </div>
