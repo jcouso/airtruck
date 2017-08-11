@@ -1,8 +1,14 @@
 
 <h1>Sua Viagems contratadas</h1>
 <% @orders.each do |order| %>
-<p> Saindo de: <%= order.trip.city_origin.name %> </p>
-<p> <%= order.trip.departure_date.strftime('%d/%b/%y') %> </p>
-<p> Chegando em: <%= order.trip.city_destination.name %> </p>
-<p> <%= order.trip.departure_date.strftime('%d/%b/%y') %> </p>
+<div class="order-card">
+  <div class="saida">
+    <p> Saindo de: <%= order.trip.city_origin.name %> </p>
+    <p> <%= order.trip.departure_date.strftime('%d/%b/%y') %> </p>
+  </div>
+  <div class="chegada">
+    <p> Chegando em: <%= order.trip.city_destination.name %> </p>
+    <p> <%= order.trip.departure_date.strftime('%d/%b/%y') %> </p>
+  </div>
+</div>
 <% end %>
