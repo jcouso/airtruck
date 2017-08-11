@@ -25,10 +25,7 @@
 
 
       <div class="col-md-6">
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-        <% end %>
-        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+
 
         <div class="row" align="center">
           <div class="form-actions col-md-5">
