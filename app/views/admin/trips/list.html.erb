@@ -1,12 +1,11 @@
-<br>
+<h1>Viagens de <%= @truck.name %>:</h1>
 <%= link_to 'Adicionar viagem', new_admin_truck_trip_path(@truck), class: "btn btn-success" %>
 <%= link_to 'Voltar', admin_trucks_path, class: "btn btn-danger" %>
 <br>
-<h1>Viagens de <%= @truck.name %>:</h1>
 <br>
 <div class="row">
   <% if @trips.all.empty? %>
-    <p>Não há viagens cadastradas, cadastre uma viagem nova...</p>
+    <p><%= @truck.name %> ainda não possui viagens cadastradas, cadastre uma viagem nova...</p>
   <% else %>
     <% @trips.each do |trip| %>
       <div class="col-xs-12 col-md-6">

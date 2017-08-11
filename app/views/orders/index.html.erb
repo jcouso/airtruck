@@ -1,2 +1,8 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+
+<h1>Sua Viagems contratadas</h1>
+<% @orders.each do |order| %>
+<p> Saindo de: <%= order.trip.city_origin.name %> </p>
+<p> <%= order.trip.departure_date.strftime('%d/%b/%y') %> </p>
+<p> Chegando em: <%= order.trip.city_destination.name %> </p>
+<p> <%= order.trip.departure_date.strftime('%d/%b/%y') %> </p>
+<% end %>
