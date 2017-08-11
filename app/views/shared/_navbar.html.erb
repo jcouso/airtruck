@@ -8,11 +8,18 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
+      <% if current_user.category == "true" %>
+
+        <%= link_to "Meus Veículos", admin_trucks_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Minhas Viagens", admin_trips_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Meus Pedidos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <% else %>
 
       <!-- Links when logged in -->
-      <%= link_to "Meus Veículos", admin_trucks_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Minhas Viagens", admin_trips_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Meus Pedidos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+        <%= link_to "Meus Pedidos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
 
       <!-- Avatar with dropdown menu -->
       <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
