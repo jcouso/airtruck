@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'trips#index'
@@ -18,4 +20,5 @@ Rails.application.routes.draw do
       get 'search', to: "trips#search"
     end
   end
+  resources :orders, only: [:index]
 end
