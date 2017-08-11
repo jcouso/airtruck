@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :trucks, dependent: :destroy
   has_many :trips, through: :trucks
+  has_many :orders
   after_create :send_welcome_email
 
 

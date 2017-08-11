@@ -31,8 +31,11 @@
         <br>
       </div>
       <div class="row" align="center">
-        <button type="button" class="btn btn-success btn-lg">RESERVE AGORA</button>
-        <p>Valor unitário: R$<%= @trip.price %>,00</p>
+        <%= simple_form_for([ @trip, @order ]) do |form| %>
+        <%= form.button :submit, "Reservar Viagem", class: "btn btn-primary" %>
+        <% end %>
+        <br>
+        <p >Valor unitário: R$<%= @trip.price %>,00</p>
       </div>
 
       </div>
