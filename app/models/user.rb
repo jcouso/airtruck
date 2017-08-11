@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :trips, through: :trucks
   after_create :send_welcome_email
 
+
   private
 
   def send_welcome_email
