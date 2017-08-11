@@ -7,8 +7,6 @@ class City < ApplicationRecord
     self.all.map {|city| City.new(name: "#{city.state} - #{city.name}", id: city.id) }
   end
 
-  private
-
   def full_name
     "#{self.name}, #{self.state}"
   end
