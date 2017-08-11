@@ -15,10 +15,14 @@ Rails.application.routes.draw do
     end
     resources :trips, only: [:update, :edit, :destroy, :show, :index]
   end
+
+  resources :orders, only: [:index]
+
   resources :trips, only: [:index, :show] do
+    resources :orders, only: [:create]
     collection do
       get 'search', to: "trips#search"
     end
   end
-  resources :orders, only: [:index]
+
 end

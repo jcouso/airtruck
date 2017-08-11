@@ -17,6 +17,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @order = Order.new
     @cities = []
 
     origin = @trip.city_origin
